@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        sh 'echo building the application...'
+      parallel {
+        stage('build') {
+          steps {
+            sh 'echo building the application...'
+          }
+        }
+
+        stage('Adding a log') {
+          steps {
+            git(url: 'https://github.com/fnahum/jenkins-demo', branch: 'dev')
+          }
+        }
+
       }
     }
 
