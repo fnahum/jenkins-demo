@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'Entregando el codigo'
+      }
+    }
+
   }
 }
