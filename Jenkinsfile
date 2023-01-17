@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'Entregando el codigo'
+        sh 'echo Entregando el codigo'
       }
     }
 
